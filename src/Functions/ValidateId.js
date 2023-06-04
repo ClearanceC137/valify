@@ -1,6 +1,6 @@
 /*
-    Validate task is to verify the id by
-    using luhn algorithm
+    Validate task is to verify the id
+    1. by using luhn algorithm
     props.Id is the object expected
 */
 function ValidateId(props) {

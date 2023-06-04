@@ -1,6 +1,7 @@
 /*
-    SaveId takes the id and it's meta data
-    and saves it into the database
+    SaveId takes the IdMetaData
+    1. savesit into the database using setDoc to specify key
+    2. use email as the key
     props.Id is argument
 */
 

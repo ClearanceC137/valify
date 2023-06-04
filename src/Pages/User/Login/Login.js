@@ -9,8 +9,12 @@ function Login() {
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in
+                /* -- Successfully Signed in  -- */
                 //const user = userCredential.user;
+                /*
+                Fetch the idMetaData which belongs to this user (FetchId)
+                1. use email as id
+                */
             })
             .catch((error) => {
                 // failed to sign in

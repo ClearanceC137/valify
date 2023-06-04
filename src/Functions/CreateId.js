@@ -1,5 +1,3 @@
-
-
 /*
     CreateId is used to format id string
     into a useable object as well as to check if the input string is valid
