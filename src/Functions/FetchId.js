@@ -1,7 +1,6 @@
 /*
     FetchId is used retrieve IdMetadata
-    and sets it to the global Id object
-    use setdoc this will allows to specify id
+    1.sets it to the global Id object for use locally
     props.email is the argument
 */
 
