@@ -4,16 +4,23 @@ import { collection, addDoc } from "firebase/firestore";               //importi
 import { EmailContext } from '../../../context';           //importing global email context for user logged in
 import { useState ,useContext} from 'react';            //importing required artifacts from react
 import SaveId from "../../../Functions/SaveId";
-
+import { useNavigate } from 'react-router-dom';             //importing required artifacts from react-router-dom
 
 function Register() {
     const [password, setPassword] = useState('');       //state to store password
     const [email, setEmail] = useState('');             //state to store email address
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
+    let navigate = useNavigate();               //navigator used to navigate between pages
+
     const Setemail = event => {             //handles setting email state
         setEmail(event.target.value);}
+
     const Setpassword = event => {              //handles setting password state
         setPassword(event.target.value);}
+
+    const routeChange = () => {             //routes to the landing page
+        navigate('/Home',{ state: { email: email}});           //passes state of user logged in
+    }
 
     const auth = getAuth();
     const OnSignup = () => {            //handles entire sign up process
@@ -27,6 +34,8 @@ function Register() {
                 2. use email as id and save the object into IdMetaData table
                 */
                 SaveId(email);
+                setUserEmail(email);
+                routeChange();
             })
             .catch((error) => {
                 const errorCode = error.code;
