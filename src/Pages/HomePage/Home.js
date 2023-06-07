@@ -5,6 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase';            //importing database from our firebase config
 import UpdateId from "../../Functions/UpdateId";
 import ValidateId from '../../Functions/ValidateId';
+import DisplayId from '../../Components/DisplayId/DisplayId';
 function Home() {
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
     const [Render,setRender] = useState(null);            //User to render metadata of the Id
@@ -45,9 +46,11 @@ function Home() {
         setRawId(event.target.value);}  //
     return (
         <div>
+            {Render ? DisplayId(Id) :
+            
            <text>Home Page</text><br/>
            <input placeholder="Id" onChange={InputId}></input><br/>
-            <button onClick={OnValidate}>Validate</button>
+            <button onClick={OnValidate}>Validate</button>}
         </div>
     );
 }
