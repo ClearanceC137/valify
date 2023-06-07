@@ -8,8 +8,11 @@ function Login() {
     const [email,setEmail] = useState('');          //email state
     const [password,setPassword] = useState('');            //password state
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
-    const routeChange = () => {             //routes to the landing page
+    const routeHome = () => {             //routes to the landing page
         navigate('/Home',{ state: { email: email}});           //passes state of user logged in
+    }
+    const routeRegister = () => {             //routes to the landing page
+        navigate('/register');           //passes state of user logged in
     }
     const OnLogin = () => {
         //send a function to the database to check if log the user in
@@ -22,7 +25,7 @@ function Login() {
                 1. use email as id
                 */
                 setUserEmail(email);
-                routeChange();
+                routeHome();
             })
             .catch((error) => {
                 // failed to sign in
@@ -47,7 +50,7 @@ function Login() {
             <input type="email" placeholder="Email" onChange={Setemail}></input><br/>
             <input type="password" placeholder="Password" onChange={Setpassword}></input><br/>
             <button  onClick={OnLogin}>Login</button><br/>
-            <button >New To Lion? Sign Up Here</button><br />
+            <button onClick={routeRegister} >New To Valify? Sign Up Here</button><br />
         </div>
     );
 }

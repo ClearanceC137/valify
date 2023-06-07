@@ -18,7 +18,7 @@ function Register() {
     const Setpassword = event => {              //handles setting password state
         setPassword(event.target.value);}
 
-    const routeChange = () => {             //routes to the landing page
+    const routeHome = () => {             //routes to the landing page
         navigate('/Home',{ state: { email: email}});           //passes state of user logged in
     }
 
@@ -35,7 +35,7 @@ function Register() {
                 */
                 SaveId(email);
                 setUserEmail(email);
-                routeChange();
+                routeHome();
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -49,7 +49,7 @@ function Register() {
             <text>Varify and Validate Your Id number</text><br/>
             <input type="email" placeholder="Email" onChange={Setemail}></input><br/>
             <input type="password" placeholder="Password" onChange={Setpassword}></input><br/>
-            <button onClick={OnSignup} >Login</button><br/>
+            <button onClick={OnSignup} >Register</button><br/>
             <button >Sign-in with Google</button>
         </div>
     );
