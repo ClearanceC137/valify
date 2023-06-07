@@ -9,7 +9,7 @@ function ValidateId(Id) {
     let RawId =Id.IdNumber;
     /* -- validate the id using luhn algorithm  -- */
     let IdArray = Array(RawId.length).fill(0);
-    for(var i = 0 ; i < RawId.length ; i++){      //convert RawString into array elements
+    for(var i = 0 ; i < RawId.length ; i++){      //convert Id String into array elements(char)
         IdArray[i] =parseInt(RawId[i]);
     }
     var len = IdArray.length;

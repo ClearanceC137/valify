@@ -15,15 +15,13 @@ function Home() {
         2. Validate using luhn algorithm
         */
        Id.IdNumber = RawId;
-       
-
     }
     const docRef = doc(db, "IdMetaData", userEmail);    //  Object reference inside database
 
     useEffect(() => {
         /* -- fetches the id object from database -- */
-        const RetrieveDoc = async () => {                            
-            const docSnap = await getDoc(docRef); 
+        const RetrieveDoc = async () => {
+            const docSnap = await getDoc(docRef);
             setId(docSnap.data().Id);
             setIsValid(docSnap.data().Id.IsValid);
 
