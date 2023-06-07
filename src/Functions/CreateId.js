@@ -3,10 +3,8 @@
     into a useable object as well as to check if the input string is valid
     props.RawStr is the original id
 */
-function CreateId(props) {
-    let RawId ="0010095594080";      // raw id string which is obtained from props.id
-    let Id = {IsValid:false,DateOfBirth:"", Gender:"", Citizenship:"", Race:0,checksum:"",IdNumber:""};
-
+function CreateId(Id) {
+    let RawId =Id.IdNumber;      // raw id string which is obtained from props.id
     if(RawId.length !== 13){
         /* -- Number of digits of an id should be 13  -- */
         return Id;

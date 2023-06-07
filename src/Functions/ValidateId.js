@@ -3,10 +3,8 @@
     1. by using luhn algorithm
     props.Id is the object expected
 */
-function ValidateId(props) {
+function ValidateId(Id) {
     /* -- set isValid false , value will only change if it passes the luhn algorithm -- */
-    //let RawId ="0010095594080";
-    let Id = {IsValid:false,DateOfBirth:0, Gender:0, Citizenship:0, Race:0,checksum:0,IdNumber:100};
     Id.IsValid = false;
     let RawId =Id.IdNumber;
     /* -- validate the id using luhn algorithm  -- */
