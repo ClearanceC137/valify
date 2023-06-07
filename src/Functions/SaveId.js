@@ -8,10 +8,10 @@ import { db } from '../firebase';            //importing database from our fireb
     props.Id is argument
 */
 function SavedId(email) {
-    let Id = {IsValid:false,DateOfBirth:"", Gender:"", Citizenship:"", Race:"",checksum:"",IdNumber:""}; // standard format of an Id field
+
     const addToDatabase = async () => {                            //handles adding an item to database
         await setDoc(doc(db, "IdMetaData", email), {
-            Id
+            IsValid:false,DateOfBirth:"", Gender:"", Citizenship:"", Race:"",Checksum:"",IdNumber:""
         });
     }
     addToDatabase();

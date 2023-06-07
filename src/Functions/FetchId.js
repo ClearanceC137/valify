@@ -15,5 +15,4 @@ function FetchId(email){
     RetrieveDoc();
 
 }
-
 export default FetchId;

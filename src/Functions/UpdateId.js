@@ -7,10 +7,16 @@ import { db } from '../firebase';            //importing database from our fireb
     2. use email as reference
 */
 
-function UpdateId(props,email) {
+function UpdateId(Id,email) {
     const UpdateDatabase = async () => {                            //handles updating an item to database
         await updateDoc(doc(db, "IdMetaData", email), {
-            props
+            IsValid: Id.IsValid,        // format of the id is valid
+            DateOfBirth :Id.DateOfBirth,
+            Gender:Id.Gender,
+            Citizenship:Id.Citizenship,
+            Race:Id.Race,
+            Checksum:Id.Checksum,
+            IdNumber:Id.IdNumber
         });
     }
     UpdateDatabase();

@@ -22,11 +22,11 @@ function Home() {
             if(ValidateId(Id)){
                 UpdateId(Id,userEmail);
                 setRender(true);
-                alert("Id Is Valid")
+                alert("Id Is Valid");
             }
        }else{
             //Id is invalid input
-            alert("Id is Invalid input")
+            alert("Id is Invalid input");
        }
     }
     const docRef = doc(db, "IdMetaData", userEmail);    //  Object reference inside database
@@ -35,14 +35,14 @@ function Home() {
         /* -- fetches the id object from database -- */
         const RetrieveDoc = async () => {
             const docSnap = await getDoc(docRef);
-            setId(docSnap.data().Id);
+            setId(docSnap.data());
             setRender(Id.IsValid);
         }
         RetrieveDoc();
       }, []);
 
     const InputId = event => {         //handles setting RawId state
-        setRawId(event.target.value);}  // 
+        setRawId(event.target.value);}  //
     return (
         <div>
            <text>Home Page</text><br/>

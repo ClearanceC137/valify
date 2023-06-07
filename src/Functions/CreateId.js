@@ -5,7 +5,6 @@
 */
 function CreateId(Id) {
     let RawId =Id.IdNumber.replace(/[-\s]/g, '');      // raw id string which is obtained from props.id
-    console.log(RawId);
     if(RawId.length !== 13){
         /* -- Number of digits of an id should be 13  -- */
         return Id;
@@ -18,7 +17,7 @@ function CreateId(Id) {
     Id.Gender = RawId.substr(6, 4);
     Id.Citizenship = RawId.substr(10, 1);
     Id.Race = RawId.substr(11, 1);
-    Id.Race = RawId.substr(12, 1);
+    Id.Checksum = RawId.substr(12, 1);
     Id.IdNumber =RawId;
     return Id;
 }
