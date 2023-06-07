@@ -3,9 +3,11 @@ import { useState ,useContext,useEffect } from 'react';            //importing r
 import CreateId from '../../Functions/CreateId';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase';            //importing database from our firebase config
+import UpdateId from "../../Functions/UpdateId";
+import ValidateId from '../../Functions/ValidateId';
 function Home() {
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
-    const [isValid,setIsValid] = useState(false);            //password state
+    const [Render,setRender] = useState(null);            //User to render metadata of the Id
     const [RawId,setRawId] = useState('');            //password state
     const [Id,setId] = useState({});            //password state
     const OnValidate = () => {
@@ -15,6 +17,17 @@ function Home() {
         2. Validate using luhn algorithm
         */
        Id.IdNumber = RawId;
+       if(CreateId(Id).IsValid){
+            setId(CreateId(Id));
+            if(ValidateId(Id)){
+                UpdateId(Id,userEmail);
+                setRender(true);
+                alert("Id Is Valid")
+            }
+       }else{
+            //Id is invalid input
+            alert("Id is Invalid input")
+       }
     }
     const docRef = doc(db, "IdMetaData", userEmail);    //  Object reference inside database
 
@@ -23,8 +36,7 @@ function Home() {
         const RetrieveDoc = async () => {
             const docSnap = await getDoc(docRef);
             setId(docSnap.data().Id);
-            setIsValid(docSnap.data().Id.IsValid);
-
+            setRender(Id.IsValid);
         }
         RetrieveDoc();
       }, []);
@@ -35,7 +47,7 @@ function Home() {
         <div>
            <text>Home Page</text><br/>
            <input placeholder="Id" onChange={InputId}></input><br/>
-            <button >Validate</button>
+            <button onClick={OnValidate}>Validate</button>
         </div>
     );
 }
