@@ -4,7 +4,7 @@
     props.RawStr is the original id
 */
 function CreateId(Id) {
-    let RawId =Id.IdNumber;      // raw id string which is obtained from props.id
+    let RawId =Id.IdNumber.replace(/[-\s]/g, '');      // raw id string which is obtained from props.id
     console.log(RawId);
     if(RawId.length !== 13){
         /* -- Number of digits of an id should be 13  -- */

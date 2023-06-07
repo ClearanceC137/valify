@@ -42,7 +42,7 @@ function Home() {
       }, []);
 
     const InputId = event => {         //handles setting RawId state
-        setRawId(event.target.value);}  // (/[-\s]/g) used to remove hyphen and spaces on the input
+        setRawId(event.target.value);}  // 
     return (
         <div>
            <text>Home Page</text><br/>
