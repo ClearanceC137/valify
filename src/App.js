@@ -4,7 +4,8 @@ import Login from "./Pages/User/Login/Login";
 import { BrowserRouter, Routes, Route} from "react-router-dom";    //importing required artifacts from react-router-dom
 import { EmailContext } from "./context";       //email context propagated through entire site
 import { React, useState} from "react";       //importing required artifacts from react
-import DisplayId from "./Components/DisplayId/DisplayId"
+import DisplayId from "./Components/DisplayId/DisplayId";
+import Insights from "./Components/Insights/Insights";
 function App() {
   const [userEmail, setUserEmail] = useState("");
 
@@ -13,7 +14,8 @@ function App() {
       <BrowserRouter>                                              {/*routes container for different screens*/}
         <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />}/>
+        <Route path="/Insights" element={<Insights />}/>
+        <Route path="/Login" element={<Login />}/>
         <Route path="/Register" element={<Register />}/>
         <Route path="/Home" element={<Home />} />
         </Routes>
