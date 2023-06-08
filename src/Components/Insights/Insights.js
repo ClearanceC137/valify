@@ -3,6 +3,9 @@ import { useState ,useContext,useEffect } from 'react';            //importing r
 import { doc, getDocs ,collection } from "firebase/firestore";
 import { db } from '../../firebase'; 
 import DisplayId from '../../Components/DisplayId/DisplayId';
+import LineChart from './LineChart';
+import BarChart from './BarChart';
+import PieChart from './PieChart';
 /*
     DisplayId is used to display the meta data
     of an id which includes the following
@@ -25,6 +28,7 @@ function Insights(){
         {Ids.map((item, index) => (
             <text key={index}>{DisplayId(item)}</text>
         ))}
+        {BarChart()}
         </div>
     );
 }
