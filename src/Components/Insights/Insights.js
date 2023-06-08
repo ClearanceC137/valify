@@ -6,6 +6,7 @@ import DisplayId from '../../Components/DisplayId/DisplayId';
 import LineChart from './LineChart';
 import BarChart from './BarChart';
 import PieChart from './PieChart';
+import "./Insights.css"
 /*
     DisplayId is used to display the meta data
     of an id which includes the following
@@ -15,6 +16,7 @@ import PieChart from './PieChart';
 */
 function Insights(){
     const [Ids, setIds] = useState([]); //state for local cart array
+    const [Render,setRender] =useState(true);
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
     useEffect(() => {             // fetch all the Id from data base
     const getIds = async () => {
@@ -23,13 +25,28 @@ function Insights(){
       };
       getIds();
     }, []);
+    function ShowIds(){   //Renders all id inside the database
+        return (
+            <div>
+            {Ids.map((item, index) => (
+                <text key={index}>{DisplayId(item)}</text>
+            ))}
+            </div>
+        );
+    }
+    const onDatabase = event => {         //Renders database
+        setRender(true);} 
+    const onInsights = event => {         //Render Insights
+        setRender(false);}
     return (
-        <div>
-        {Ids.map((item, index) => (
-            <text key={index}>{DisplayId(item)}</text>
-        ))}
-        {BarChart()}
+        <div className='block'>
+            <div className ="parent-bs">
+                <button className='button-show' onClick={onDatabase}>Show Database</button>
+                <button className='button-show' onClick={onInsights}>Insights</button>
+            </div>
+            {Render ? ShowIds() : LineChart()}
         </div>
     );
 }
+
 export default Insights;

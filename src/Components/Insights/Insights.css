@@ -1,0 +1,26 @@
+.button-show{
+    text-align: center;
+    background-color: bisque;
+    width: 600px;
+    height: 30px;
+    border-radius: 3px;
+    border:none;
+    margin: 5px;
+
+}
+
+.button-show:hover{
+    cursor: pointer;
+}
+
+.button-show:active{
+    transform: scale(1.01);
+    animation: 0.7s;
+}
+
+
+.parent-bs{
+
+    display: flex;
+    justify-content: center;
+}
