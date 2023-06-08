@@ -17,17 +17,15 @@ function DisplayId(Id) {
     var monthIndex = date.getMonth();
     var year = date.getFullYear();
 
-    var formattedDay = day < 10 ? '0' + day : day;
+    var formattedDay = day < 10 ? '0' + day : day;   //Day should be in the format dd
     var formattedMonth = monthNames[monthIndex];
     var formattedDate = formattedDay + ' ' + formattedMonth + ' ' + year;
     return (
         <div>
-            {console.log(formattedDate)}
            <text>{formattedDate}</text><br/>
            <text>{Gender}</text><br/>
            <text>{Citizenship}</text><br/>
         </div>
     );
 }
-
 export default DisplayId;
