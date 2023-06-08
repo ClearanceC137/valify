@@ -30,6 +30,14 @@ function Home() {
             alert("Id is Invalid input");
        }
     }
+    function DisplayInput(){
+        return(
+            <div>
+                <input placeholder="Id" onChange={InputId}></input><br/>
+                <button onClick={OnValidate}>Validate</button>
+            </div>
+        )
+    }
     const docRef = doc(db, "IdMetaData", userEmail);    //  Object reference inside database
 
     useEffect(() => {
@@ -37,7 +45,7 @@ function Home() {
         const RetrieveDoc = async () => {
             const docSnap = await getDoc(docRef);
             setId(docSnap.data());
-            setRender(Id.IsValid);
+            setRender(docSnap.data().IsValid);
         }
         RetrieveDoc();
       }, []);
@@ -46,13 +54,8 @@ function Home() {
         setRawId(event.target.value);}  //
     return (
         <div>
-            {Render ? DisplayId(Id) :
-            
-           <text>Home Page</text><br/>
-           <input placeholder="Id" onChange={InputId}></input><br/>
-            <button onClick={OnValidate}>Validate</button>}
+            {Render ? DisplayId(Id) : DisplayInput()}
         </div>
     );
 }
-
 export default Home;
