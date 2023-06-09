@@ -1,16 +1,19 @@
-.centre{
+.items{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh;
     margin: auto;
-    width: 400px;
-    height:300px ;
     align-items: center;
 }
-
-.input{
+.status{
+    
+    font-size: 17px;
+    font-family:  cursive;
+    margin-bottom: 30px;
+}
+.id-input{
     background-color: transparent;
     border: none;
     border-bottom: 2px solid rosybrown;
@@ -23,19 +26,7 @@
     width: 300px;
 }
 
-.logo{
-    margin-bottom: 100px;
-    font-family: "Times New Roman", serif
-}
-
-.slogan{
-    font-size: 15px;
-    font-family:  cursive;
-    margin-top: 0px;
-    margin-bottom: 50px;
-}
-
-.button {
+.validate-button {
     background-color: rgb(160, 118, 103);
     border: 0px;
     border-width: 1px 1px 1px 1px;
@@ -44,13 +35,14 @@
     margin-top: 20px;
     border-radius: 30px;
     font-family: "Times New Roman", serif;
-    font-size: 18px;
+    font-size: 19px;
+    margin-left: 17%;
 }
 
-.button:hover{
+.validate-button:hover{
     cursor: pointer;
 }
-.button:active{
+.validate-button:active{
     transform: scale(1.01);
     animation: 0.7s;
 }

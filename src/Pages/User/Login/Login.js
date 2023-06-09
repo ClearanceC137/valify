@@ -2,6 +2,8 @@ import { useState ,useContext } from 'react';            //importing required ar
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";            //importing required artifacts from firebase
 import { EmailContext } from '../../../context';           //importing global email context for user logged in
 import { useNavigate } from 'react-router-dom';             //importing required artifacts from react-router-dom
+import "../Register/Register.css";
+import "./Login.css";
 function Login() {
     let navigate = useNavigate();               //navigator used to navigate between pages
     const auth = getAuth();
@@ -46,11 +48,12 @@ function Login() {
         setPassword(event.target.value);}
 
     return (
-        <div>
-            <input type="email" placeholder="Email" onChange={Setemail}></input><br/>
-            <input type="password" placeholder="Password" onChange={Setpassword}></input><br/>
-            <button  onClick={OnLogin}>Login</button><br/>
-            <button onClick={routeRegister} >New To Valify? Sign Up Here</button><br />
+        <div className='centre'>
+            <h1 className="logo">VALIFY</h1>
+            <button  className='registerHere' onClick={routeRegister} >New To Valify? Sign Up Here</button>
+            <input className='input' type="email" placeholder="Email" onChange={Setemail}></input>
+            <input className='input' type="password" placeholder="Password" onChange={Setpassword}></input>
+            <button className='button'  onClick={OnLogin}>Login</button>
         </div>
     );
 }

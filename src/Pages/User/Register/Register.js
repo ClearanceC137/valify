@@ -5,7 +5,7 @@ import { EmailContext } from '../../../context';           //importing global em
 import { useState ,useContext} from 'react';            //importing required artifacts from react
 import SaveId from "../../../Functions/SaveId";
 import { useNavigate } from 'react-router-dom';             //importing required artifacts from react-router-dom
-
+import "./Register.css"
 function Register() {
     const [password, setPassword] = useState('');       //state to store password
     const [email, setEmail] = useState('');             //state to store email address
@@ -45,12 +45,12 @@ function Register() {
     }
 
     return (
-        <div>
-            <text>Varify and Validate Your Id number</text><br/>
-            <input type="email" placeholder="Email" onChange={Setemail}></input><br/>
-            <input type="password" placeholder="Password" onChange={Setpassword}></input><br/>
-            <button onClick={OnSignup} >Register</button><br/>
-            <button >Sign-in with Google</button>
+        <div className="centre">
+            <h1 className="logo">VALIFY</h1>
+            <h1 className="slogan"> Sign-up to Varify Your Id number</h1>
+            <input className="input" type="email" placeholder="Email" onChange={Setemail}></input>
+            <input className="input" type="password" placeholder="Password" onChange={Setpassword}></input>
+            <button className="button" onClick={OnSignup} >Sign-up</button><br/>
         </div>
     );
 }

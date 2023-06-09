@@ -6,6 +6,7 @@ import { db } from '../../firebase';            //importing database from our fi
 import UpdateId from "../../Functions/UpdateId";
 import ValidateId from '../../Functions/ValidateId';
 import DisplayId from '../../Components/DisplayId/DisplayId';
+import './Home.css'
 function Home() {
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
     const [Render,setRender] = useState(null);            //User to render metadata of the Id
@@ -33,8 +34,8 @@ function Home() {
     function DisplayInput(){
         return(
             <div>
-                <input placeholder="Id" onChange={InputId}></input><br/>
-                <button onClick={OnValidate}>Validate</button>
+                <input minLength={13}  className='id-input' placeholder="Id" onChange={InputId}></input><br/>
+                <button className='validate-button' onClick={OnValidate}>Validate</button>
             </div>
         )
     }
@@ -53,8 +54,9 @@ function Home() {
     const InputId = event => {         //handles setting RawId state
         setRawId(event.target.value);}  //
     return (
-        <div>
-            {Render ? DisplayId(Id) : DisplayInput()}
+        <div className='items'>
+            {Render? <h1 className='status'>Your Id is valid</h1> : <h1 className='status'>Please Enter a valid Id</h1>}
+            {false? DisplayId(Id) : DisplayInput()}
         </div>
     );
 }
