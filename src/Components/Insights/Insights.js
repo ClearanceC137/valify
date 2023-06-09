@@ -6,6 +6,7 @@ import DisplayId from '../../Components/DisplayId/DisplayId';
 import LineChart from './LineChart';
 import BarChart from './BarChart';
 import PieChart from './PieChart';
+import Footer from '../Footer/Footer';
 import "./Insights.css"
 /*
     DisplayId is used to display the meta data
@@ -38,19 +39,25 @@ function Insights(){
     }
     function ShowOptions(){   //Renders all id inside the database
         return (
+
             <div>
-                <label for="graphs">Choose a graph to display:</label>
-                <select id="graphs">
-                    <option id="0" onClick={onGraph}>Line graph</option>
-                    <option id="1" onClick={onGraph}>Bar graph</option>
-                    <option id="2" onClick={onGraph}>Pie Chart</option>
-                </select><br/>
-                <label for="filter">Category</label>
-                <select id="filter">
-                    <option id="0" onClick={onCategory}>Year of birth</option>
-                    <option id="1" onClick={onCategory}>Gender</option>
-                    <option id="2" onClick={onCategory}>CitizenShip</option>
-                </select> 
+                <div className='scrollbar' style={{marginTop:"50px"}}>
+                    <label for="graphs">Choose a graph to display:</label>
+                    <select id="graphs">
+                        <option id="0" onClick={onGraph}>Line graph</option>
+                        <option id="1" onClick={onGraph}>Bar graph</option>
+                        <option id="2" onClick={onGraph}>Pie Chart</option>
+                    </select>
+
+                </div>
+                <div className='scrollbar' style={{marginTop:"10px"}}>
+                    <label for="filter">Category</label>
+                    <select id="filter">
+                        <option id="0" onClick={onCategory}>Year of birth</option>
+                        <option id="1" onClick={onCategory}>Gender</option>
+                        <option id="2" onClick={onCategory}>CitizenShip</option>
+                    </select> 
+                </div>
             </div>
         );
     }
@@ -75,13 +82,16 @@ function Insights(){
         setRender(false);
     }
     return (
+        <dv>
         <div className='block'>
             <div className ="parent-bs">
                 <button className='button-show' onClick={onDatabase}>Show Database</button>
                 <button className='button-show' onClick={onInsights}>Insights</button>
             </div>
-            {Render ? ShowIds() : LineChart()}
+            {Render ? ShowIds() : ShowOptions()}
         </div>
+        <Footer/>
+        </dv>
     );
 }
 
