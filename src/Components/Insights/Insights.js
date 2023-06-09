@@ -29,7 +29,7 @@ function Insights(){
     }, []);
     function ShowIds(){   //Renders all id inside the database
         return (
-            <div>
+            <div className='space'>
                 {Ids.map((item, index) => (
                     <text key={index}>{DisplayId(item)}</text>
                 ))}

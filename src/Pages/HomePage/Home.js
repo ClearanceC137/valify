@@ -56,7 +56,7 @@ function Home() {
     return (
         <div className='items'>
             {Render? <h1 className='status'>Your Id is valid</h1> : <h1 className='status'>Please Enter a valid Id</h1>}
-            {false? DisplayId(Id) : DisplayInput()}
+            {Render? DisplayId(Id) : DisplayInput()}
         </div>
     );
 }

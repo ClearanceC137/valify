@@ -18,7 +18,7 @@ function LineChart() {
     ],
   };
   return (
-    <div style={{ position: "relative", margin: "auto", width: "700px" }} >
+    <div style={{ position: "relative", margin: "auto", width: "700px",marginTop:"80px" }} >
       <Line data={data}/>
     </div>
   );
