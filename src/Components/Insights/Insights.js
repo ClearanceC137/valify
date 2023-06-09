@@ -80,7 +80,7 @@ function Insights(){
                 <button className='button-show' onClick={onDatabase}>Show Database</button>
                 <button className='button-show' onClick={onInsights}>Insights</button>
             </div>
-            {Render ? ShowIds() : ShowOptions()}
+            {Render ? ShowIds() : LineChart()}
         </div>
     );
 }
