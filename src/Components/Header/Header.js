@@ -15,9 +15,9 @@ function Header(email) {
         <div class="dropdown">
             <button className="d-button"><MenuIcon/></button>
             <div class="dropdown-options">
-                <a href="#">{userEmail}</a>
+                <a  href="#">{userEmail}</a>
                 <a href="#">About</a>
-                <a href="#" >Logout</a>
+                <a href="#"  onClick={routeLogout}>Logout</a>
             </div>
         </div>
     </div>
