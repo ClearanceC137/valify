@@ -1,6 +1,6 @@
 import { EmailContext } from '../../context';           //importing global email context for user logged in
 import { useState ,useContext,useEffect } from 'react';            //importing required artifacts from react
-import { doc, getDocs ,collection } from "firebase/firestore";
+import { getDocs ,collection } from "firebase/firestore";
 import { db } from '../../firebase'; 
 import DisplayId from '../../Components/DisplayId/DisplayId';
 import LineChart from './LineChart';
@@ -48,7 +48,6 @@ function Insights(){
                         <option id="1" onClick={onGraph}>Bar graph</option>
                         <option id="2" onClick={onGraph}>Pie Chart</option>
                     </select>
-
                 </div>
                 <div className='scrollbar' style={{marginTop:"10px"}}>
                     <label for="filter">Category</label>
