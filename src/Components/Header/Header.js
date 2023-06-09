@@ -1,5 +1,6 @@
 import "./Header.css";      //importing style sheet
 import MenuIcon from '@mui/icons-material/Menu';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useContext} from 'react';            //importing required artifacts from react
 import { EmailContext } from '../../context';           //importing global email context for user logged in
 import { useNavigate } from 'react-router-dom';             //importing required artifacts from react-router-dom
@@ -15,7 +16,7 @@ function Header(email) {
         <div class="dropdown">
             <button className="d-button"><MenuIcon/></button>
             <div class="dropdown-options">
-                <a  href="#">{userEmail}</a>
+                <a  href="#"><AccountCircleIcon/>{userEmail}</a>
                 <a href="#">About</a>
                 <a href="#"  onClick={routeLogout}>Logout</a>
             </div>
