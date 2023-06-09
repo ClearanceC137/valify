@@ -33,21 +33,24 @@ function Insights(){
                 {Ids.map((item, index) => (
                     <text key={index}>{DisplayId(item)}</text>
                 ))}
-                <div>
-                    <label for="graphs">Choose a graph to display:</label>
-                    <select id="graphs">
-                        <option id="0" onClick={onGraph}>Line graph</option>
-                        <option id="1" onClick={onGraph}>Bar graph</option>
-                        <option id="2" onClick={onGraph}>Pie Chart</option>
-                    </select>
-                    <br/>
-                    <label for="filter">Category</label>
-                    <select id="filter">
-                        <option id="0" onClick={onCategory}>Year of birth</option>
-                        <option id="1" onClick={onCategory}>Gender</option>
-                        <option id="2" onClick={onCategory}>CitizenShip</option>
-                    </select> 
-                </div>
+            </div>
+        );
+    }
+    function ShowOptions(){   //Renders all id inside the database
+        return (
+            <div>
+                <label for="graphs">Choose a graph to display:</label>
+                <select id="graphs">
+                    <option id="0" onClick={onGraph}>Line graph</option>
+                    <option id="1" onClick={onGraph}>Bar graph</option>
+                    <option id="2" onClick={onGraph}>Pie Chart</option>
+                </select><br/>
+                <label for="filter">Category</label>
+                <select id="filter">
+                    <option id="0" onClick={onCategory}>Year of birth</option>
+                    <option id="1" onClick={onCategory}>Gender</option>
+                    <option id="2" onClick={onCategory}>CitizenShip</option>
+                </select> 
             </div>
         );
     }
@@ -77,7 +80,7 @@ function Insights(){
                 <button className='button-show' onClick={onDatabase}>Show Database</button>
                 <button className='button-show' onClick={onInsights}>Insights</button>
             </div>
-            {Render ? ShowIds() : LineChart()}
+            {Render ? ShowIds() : ShowOptions()}
         </div>
     );
 }
