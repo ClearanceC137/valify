@@ -7,7 +7,8 @@ import LineChart from './LineChart';
 import BarChart from './BarChart';
 import PieChart from './PieChart';
 import Footer from '../Footer/Footer';
-import "./Insights.css"
+import "./Insights.css";
+
 /*
     DisplayId is used to display the meta data
     of an id which includes the following
