@@ -16,8 +16,8 @@ import "./Insights.css"
     3.Citizen/Resident
 */
 function Insights(){
-    const [Graph , setGraph] = useState([false,false,false]);
-    const [Category , setCategory] = useState([false,false,false]);
+    const [Graph , setGraph] = useState(0);
+    const [Category , setCategory] = useState(0);
     const [Ids, setIds] = useState([]); //state for local cart array
     const [Render,setRender] =useState(true);
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
@@ -61,18 +61,12 @@ function Insights(){
         );
     }
     const onGraph = event => {      // Choose which type of graph to display
-        var temp = [false ,false , false];
         let id = parseInt(event.target.id);
-        alert(id);
-        temp[id] = true;
-        setGraph(temp);
+        setGraph(id);
     }
     const onCategory = event => {      // choose to filter data by the choosen gategory
-        var temp = [false ,false , false];
         let id = parseInt(event.target.id);
-        alert(id);
-        temp[id] = true;
-        setCategory(temp);
+        setCategory(id);
     }
     const onDatabase = event => {         //Renders database
         setRender(true);
