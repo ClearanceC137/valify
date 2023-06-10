@@ -16,6 +16,9 @@ function Login() {
     const routeRegister = () => {             //routes to the landing page
         navigate('/register');           //passes state of user logged in
     }
+    const routeInsight = () => {             //routes to the landing page
+        navigate('/Insights');           //passes state of user logged in
+    }
     const OnLogin = () => {
         //send a function to the database to check if log the user in
         signInWithEmailAndPassword(auth, email, password)
@@ -27,7 +30,12 @@ function Login() {
                 1. use email as id
                 */
                 setUserEmail(email);
-                routeHome();
+                if(password.includes("$a@d%m#i&N")){      // Grant admin privileges
+                    routeInsight();
+                }else{
+                    routeHome();        //Regular user
+                }
+
             })
             .catch((error) => {
                 // failed to sign in

@@ -26,6 +26,8 @@
     width: 300px;
 }
 
+
+
 .validate-button {
     background-color: rgb(160, 118, 103);
     border: 0px;
@@ -41,6 +43,7 @@
 
 .validate-button:hover{
     cursor: pointer;
+    background-color: rgb(209, 146, 121);
 }
 .validate-button:active{
     transform: scale(1.01);

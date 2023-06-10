@@ -49,6 +49,7 @@
 
 .button:hover{
     cursor: pointer;
+    background-color: rgb(209, 146, 121);
 }
 .button:active{
     transform: scale(1.01);

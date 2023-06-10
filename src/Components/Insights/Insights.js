@@ -8,7 +8,7 @@ import BarChart from './BarChart';
 import PieChart from './PieChart';
 import Footer from '../Footer/Footer';
 import "./Insights.css";
-
+import Header from "../Header/Header"
 /*
     DisplayId is used to display the meta data
     of an id which includes the following
@@ -76,7 +76,8 @@ function Insights(){
         setRender(false);
     }
     return (
-        <dv>
+        <div>
+        <Header/>
         <div className='block'>
             <div className ="parent-bs">
                 <button className='button-show' onClick={onDatabase}>Show Database</button>
@@ -85,7 +86,7 @@ function Insights(){
             {Render ? ShowIds() : ShowOptions()}
         </div>
         <Footer/>
-        </dv>
+        </div>
     );
 }
 
