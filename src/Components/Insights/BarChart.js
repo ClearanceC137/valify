@@ -19,7 +19,7 @@ function BarChart(props){
     ],
   };
   return (
-    <div style={{ position: "relative", margin: "auto", width: "700px" }} >
+    <div style={{ position: "relative", margin: "auto", width: "900px" }} >
       <Bar height={100} data={data} />
     </div>
   );

@@ -43,7 +43,7 @@ function Insights(){
         return (
 
             <div>
-                <div className='scrollbar' style={{marginTop:"50px"}}>
+                <div className='scrollbar' style={{marginTop:"10px"}}>
                     <label for="graphs">Choose a graph to display:</label>
                     <select id="graphs">
                         <option id="0" onClick={onGraph}>Line graph</option>
@@ -87,7 +87,7 @@ function Insights(){
             </div>
             {Render ? ShowIds() : ShowOptions()}
         </div>
-        
+        <Footer/>
         </div>
     );
 }

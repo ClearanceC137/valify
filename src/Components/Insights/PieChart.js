@@ -16,7 +16,7 @@ function PieChart(props){
     ],
   };
   return (
-    <div style={{ position: "relative", margin: "auto", width: "500px" }} >
+    <div style={{ position: "relative", margin: "auto", width: "350px" }} >
       <Pie data={data} />
     </div>
   );
