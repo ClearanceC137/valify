@@ -4,16 +4,16 @@ import React from "react";
 import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 
-function BarChart(){
+function BarChart(props){
   
-  const labels = ["January", "February", "March", "April", "May", "June"];
+  const labels = Object.keys(props);
   const data = {
     labels: labels,
     datasets: [
       {
-        label: "My First dataset",
+        label: labels,
         backgroundColor: ["rgb(38, 100, 115)","rgb(35, 145, 255)"],
-        data: [0, 10, 5, 2, 20, 30, 45],
+        data: Object.values(props),
         options:{"responsive":true,"maintainAspectRatio":true,"showScale":false}
       },
     ],

@@ -8,7 +8,8 @@ import BarChart from './BarChart';
 import PieChart from './PieChart';
 import Footer from '../Footer/Footer';
 import "./Insights.css";
-import Header from "../Header/Header"
+import Header from "../Header/Header";
+import DisplayGraph from './DisplayGraph';
 /*
     DisplayId is used to display the meta data
     of an id which includes the following
@@ -56,8 +57,9 @@ function Insights(){
                         <option id="0" onClick={onCategory}>Year of birth</option>
                         <option id="1" onClick={onCategory}>Gender</option>
                         <option id="2" onClick={onCategory}>CitizenShip</option>
-                    </select> 
+                    </select>
                 </div>
+                {DisplayGraph(Ids,Graph,Category)}
             </div>
         );
     }
@@ -85,7 +87,7 @@ function Insights(){
             </div>
             {Render ? ShowIds() : ShowOptions()}
         </div>
-        <Footer/>
+        
         </div>
     );
 }

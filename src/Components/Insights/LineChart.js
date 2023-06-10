@@ -2,17 +2,16 @@ import React from "react";
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
-function LineChart() {
-  const labels = ["January", "February", "March", "April", "May", "June"];
-
+function LineChart(props) {
+  const labels = Object.keys(props);
   const data = {
     labels: labels,
     datasets: [
       {
-        label: "My First dataset",
+        label: labels,
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
-        data: [0, 10, 5, 2, 20, 30, 45],
+        data: Object.values(props),
         options:{"responsive":true,"maintainAspectRatio":true,"showScale":false}
       },
     ],
