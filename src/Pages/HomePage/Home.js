@@ -36,7 +36,7 @@ function Home() {
     function DisplayInput(){
         return(
             <div>
-                <input minLength={13}  className='id-input' placeholder="Id" onChange={InputId}></input><br/>
+                <input className='id-input' placeholder="Id" onChange={InputId}></input><br/>
                 <button  className='validate-button' onClick={OnValidate}>Validate</button>
             </div>
         )

@@ -4,7 +4,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useContext} from 'react';            //importing required artifacts from react
 import { EmailContext } from '../../context';           //importing global email context for user logged in
 import { useNavigate } from 'react-router-dom';             //importing required artifacts from react-router-dom
-function Header(email) {
+function Header() {
     let navigate = useNavigate();               //navigator used to navigate between pages
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
     const routeLogout = () => {             //logs out the user

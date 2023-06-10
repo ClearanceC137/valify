@@ -9,8 +9,8 @@ import './Display.css'
 function DisplayId(Id) {
 
     var date = new Date(parseInt(Id.DateOfBirth.substr(0,2)) > 50 ? "19"+Id.DateOfBirth.substr(0,2)+"-"+Id.DateOfBirth.substr(2,2)+"-"+Id.DateOfBirth.substr(4,2) :"20"+Id.DateOfBirth.substr(0,2)+"-"+Id.DateOfBirth.substr(2,2)+"-"+Id.DateOfBirth.substr(4,2));
-    const Gender = parseInt(Id.Gender.substr(6,4) < 5000) ? "Female" : "Male  " ;  // 0000 < 4999 are female and 5000-9999
-    const Citizenship = parseInt(Id.Citizenship.substr(10,1) === 0) ? "SA citizen" : "Permanent resident" ;  // SA citizen – 0 – or a permanent resident – 1
+    const Gender = parseInt(Id.Gender) < 5000 ? "Female" : "Male  " ;  // 0000 < 4999 are female and 5000-9999
+    const Citizenship = parseInt(Id.Citizenship) === 0 ? "SA citizen" : "Permanent resident" ;  // SA citizen – 0 – or a permanent resident – 1
 
     var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
