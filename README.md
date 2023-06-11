@@ -20,7 +20,7 @@ VALIFY is a web application that will validate an RSA ID number that users will 
 
 This is what you can do with VALIFY:
 
-- input an id to be validated
+- Input an id to be validated
 - Get feedback about the status of the id
 - View id along with its meta data such as:
 - Gender
