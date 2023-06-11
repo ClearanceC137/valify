@@ -23,9 +23,9 @@ This is what you can do with VALIFY:
 - Input an id to be validated
 - Get feedback about the status of the id
 - View id along with its meta data such as:
-- Gender
-- Year of birth
-- Citizenship
+    - Gender
+    - Year of birth
+    - Citizenship
 - The following is for **admin**:
     - To gain admin privileges, On sign-up include the substring **"$a@d%m#i&N"** on your password
     - as an admin you can do the following:
