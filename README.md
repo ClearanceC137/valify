@@ -47,6 +47,6 @@ This is what you can do with VALIFY:
 
 
 ### To find out more, please visit the 
-[vALIFY github](https://github.com/ClearanceC137/valify)
+[VALIFY github](https://github.com/ClearanceC137/valify)
 
 
