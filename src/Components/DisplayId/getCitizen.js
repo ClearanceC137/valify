@@ -1,4 +1,3 @@
-import './Display.css'
 /*
     returns CitizenShip
 */

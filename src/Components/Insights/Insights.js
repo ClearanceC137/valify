@@ -3,9 +3,6 @@ import { useState ,useContext,useEffect } from 'react';            //importing r
 import { getDocs ,collection } from "firebase/firestore";
 import { db } from '../../firebase'; 
 import DisplayId from '../../Components/DisplayId/DisplayId';
-import LineChart from './LineChart';
-import BarChart from './BarChart';
-import PieChart from './PieChart';
 import Footer from '../Footer/Footer';
 import "./Insights.css";
 import Header from "../Header/Header";

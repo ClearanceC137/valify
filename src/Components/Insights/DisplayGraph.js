@@ -1,13 +1,9 @@
-import React from "react";
-import Chart from "chart.js/auto";
-import { Line } from "react-chartjs-2";
 import getCitizen from "../DisplayId/getCitizen";
 import getGender from "../DisplayId/getGender";
 import GetYear from "../DisplayId/getYear";
 import LineChart from './LineChart';
 import BarChart from './BarChart';
 import PieChart from './PieChart';
-import Footer from '../Footer/Footer';
 /*
     Display a chart based on the following
     1.type of graph
