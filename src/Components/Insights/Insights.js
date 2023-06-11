@@ -10,6 +10,7 @@ import Footer from '../Footer/Footer';
 import "./Insights.css";
 import Header from "../Header/Header";
 import DisplayGraph from './DisplayGraph';
+import Loader from '../Loader/Loader';
 /*
     DisplayId is used to display the meta data
     of an id which includes the following
@@ -23,6 +24,7 @@ function Insights(){
     const [Ids, setIds] = useState([]); //state for local cart array
     const [Render,setRender] =useState(true);
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
+    const [Isloading,setIsloading] = useState(true);            // To render Loading component
     useEffect(() => {             // fetch all the Id from data base
     const getIds = async () => {
         const data = await getDocs(collection(db, "IdMetaData"));
@@ -30,6 +32,15 @@ function Insights(){
       };
       getIds();
     }, []);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          // Code to be executed after the specified time in seconds
+          setIsloading(false);
+        }, 5000); // 5000 milliseconds = 5 seconds
+
+        // Cleanup function to clear the timer if the component unmounts
+        return () => clearTimeout(timer);
+      }, []);
     function ShowIds(){   //Renders all id inside the database
         return (
             <div className='space'>
@@ -78,15 +89,15 @@ function Insights(){
         setRender(false);
     }
     return (
-        <div>
-        <Header/>
+        <div><Header/>
+        { Isloading ?  <Loader/>:
         <div className='block'>
             <div className ="parent-bs">
                 <button className='button-show' onClick={onDatabase}>Show Database</button>
                 <button className='button-show' onClick={onInsights}>Insights</button>
             </div>
             {Render ? ShowIds() : ShowOptions()}
-        </div>
+        </div>}
         <Footer/>
         </div>
     );
