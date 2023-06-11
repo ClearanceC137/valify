@@ -16,9 +16,9 @@ function Header() {
         <div class="dropdown">
             <button className="d-button"><MenuIcon/></button>
             <div class="dropdown-options">
-                <a  href="#" ><AccountCircleIcon/>{userEmail}</a>
-                <a href="#">About</a>
-                <a href="#"  onClick={routeLogout}>Logout</a>
+                <a><AccountCircleIcon/>{userEmail}</a>
+                <a >About</a>
+                <a onClick={routeLogout}>Logout</a>
             </div>
         </div>
     </div>
