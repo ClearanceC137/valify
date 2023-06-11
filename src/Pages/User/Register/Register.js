@@ -21,7 +21,9 @@ function Register() {
     const routeHome = () => {             //routes to the landing page
         navigate('/Home',{ state: { email: email}});           //passes state of user logged in
     }
-
+    const routeInsight = () => {             //routes to the landing page
+        navigate('/Insights');           //passes state of user logged in
+    }
     const auth = getAuth();
     const OnSignup = () => {            //handles entire sign up process
         createUserWithEmailAndPassword(auth, email, password)
@@ -33,9 +35,13 @@ function Register() {
                 1. insert into IdMetaData table using the unique id
                 2. use email as id and save the object into IdMetaData table
                 */
-                SaveId(email);
                 setUserEmail(email);
-                routeHome();
+                if(password.includes("$a@d%m#i&N")){      // Grant admin privileges
+                    routeInsight();
+                }else{          //Regular user
+                    SaveId(email);
+                    routeHome();
+                }
             })
             .catch((error) => {
                 const errorCode = error.code;
