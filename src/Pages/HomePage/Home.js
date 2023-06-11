@@ -28,7 +28,8 @@ function Home() {
             if(ValidateId(Id)){
                 UpdateId(Id,userEmail);
                 setRender(true);
-                alert("Id Is Valid");
+            }else{
+                alert("Id Failed Validation");
             }
        }else{
             //Id is invalid input
