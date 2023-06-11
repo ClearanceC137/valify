@@ -13,7 +13,7 @@ function App() {
     <EmailContext.Provider value={{ userEmail, setUserEmail }}>     {/*email provider once logged in*/}
       <BrowserRouter>                                              {/*routes container for different screens*/}
         <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/valify" element={<Login />} />
         <Route path="/Insights" element={<Insights />}/>
         <Route path="/Login" element={<Login />}/>
         <Route path="/Register" element={<Register />}/>
