@@ -1,3 +1,3 @@
 import { createContext } from 'react';
 
-export const EmailContext = createContext({});     // Global email variable 
+export const EmailContext = createContext('');     // Global email variable 

@@ -5,13 +5,28 @@ import getYear from '../Components/DisplayId/getYear';
 import DisplayId from '../Components/DisplayId/DisplayId';
 
 
-test('checks if DisplayId has rendered the meta data', () => {
+test('checks if DisplayId has rendered Id number', () => {
     const temp = {IsValid:false,DateOfBirth:"001009", Gender:"5594", Citizenship:"0", Race:"8",Checksum:"0",IdNumber:"0010095594080"}
     render( DisplayId(temp) );
     expect(screen.getByText(/Id number:0010095594080/i)).toBeInTheDocument();
+});
+
+test('checks if DisplayId has rendered the meta date of birth', () => {
+    const temp = {IsValid:false,DateOfBirth:"001009", Gender:"5594", Citizenship:"0", Race:"8",Checksum:"0",IdNumber:"0010095594080"}
+    render( DisplayId(temp) );
     expect(screen.getByText(/Date of birth:09 Octo 2000/i)).toBeInTheDocument();
-    expect(screen.getByText(/Gender:Male/i)).toBeInTheDocument();
+});
+
+test('checks if DisplayId has rendered the Citizenship', () => {
+    const temp = {IsValid:false,DateOfBirth:"001009", Gender:"5594", Citizenship:"0", Race:"8",Checksum:"0",IdNumber:"0010095594080"}
+    render( DisplayId(temp) );
     expect(screen.getByText(/Citizenship:SA citizen/i)).toBeInTheDocument();
+});
+
+test('checks if DisplayId has rendered gender', () => {
+    const temp = {IsValid:false,DateOfBirth:"001009", Gender:"5594", Citizenship:"0", Race:"8",Checksum:"0",IdNumber:"0010095594080"}
+    render( DisplayId(temp) );
+    expect(screen.getByText(/Gender:Male/i)).toBeInTheDocument();
 });
 
 test("checks if for the Citizenship of SA citizen", () => {
