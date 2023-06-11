@@ -8,7 +8,7 @@ function Header() {
     let navigate = useNavigate();               //navigator used to navigate between pages
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
     const routeLogout = () => {             //logs out the user
-        navigate('/');           //passes state of user logged in
+        navigate('/valify');           //passes state of user logged in
     }
   return (
     <div className="header-p">
