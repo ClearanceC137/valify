@@ -2,7 +2,7 @@
 
 ## Introduction
 
-VALIFY web application that will validate an RSA ID number that users will input from the UI. Given that a South African ID number is a 13-digit number which is defined by the following format: YYMMDDSSSSCAZ.
+VALIFY is a web application that will validate an RSA ID number that users will input from the UI. Given that a South African ID number is a 13-digit number which is defined by the following format: YYMMDDSSSSCAZ.
 -	The first six digits (YYMMDD) are based on your date of birth – 23 January 1988 is 880123.
 -	The next four digits (SSSS) are used to define your gender –  females are assigned numbers in the range 0000-4999 and males from 5000-9999.
 -	The next digit (C) shows if you are an SA citizen – 0 – or a permanent resident – 1.
