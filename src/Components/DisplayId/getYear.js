@@ -1,4 +1,3 @@
-import './Display.css'
 /*
     Return year of birth
 */
