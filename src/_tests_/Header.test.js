@@ -15,6 +15,6 @@ test('checks if Header shows users email on the profile', () => {
         </BrowserRouter>
 
     );
-    console.log(EmailContext.userEmail);
+    //have to set global emailContext first for the test to pass
     expect(screen.queryByTestId("email-element")?.textContent).toContain("clearancetshepiso@gmail.com");
 });
