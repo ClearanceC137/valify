@@ -8,7 +8,6 @@ function LineChart(props) {
     labels: labels,
     datasets: [
       {
-        label: labels,
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
         data: Object.values(props),
@@ -16,8 +15,9 @@ function LineChart(props) {
       },
     ],
   };
+
   return (
-    <div style={{ position: "relative", margin: "auto", width: "700px",marginTop:"20px" }} >
+    <div style={{ position: "relative", margin: "auto", width: "700px",marginTop:"30px" }} >
       <Line data={data}/>
     </div>
   );

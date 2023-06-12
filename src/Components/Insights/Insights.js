@@ -22,10 +22,16 @@ function Insights(){
     const [Render,setRender] =useState(true);
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
     const [Isloading,setIsloading] = useState(true);            // To render Loading component
+
     useEffect(() => {             // fetch all the Id from data base
     const getIds = async () => {
         const data = await getDocs(collection(db, "IdMetaData"));
-        setIds(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        setIds(data.docs.map(function(doc){
+            if (doc.data().IdNumber === "0000000000000") {
+                return undefined;
+            }
+            return { ...doc.data(), id: doc.id };
+       }).filter(function (item) { return item; }));
       };
       getIds();
     }, []);
@@ -87,6 +93,7 @@ function Insights(){
     }
     return (
         <div><Header/>
+        {console.log(Ids)}
         { Isloading ?  <Loader/>:
         <div className='block'>
             <div className ="parent-bs">

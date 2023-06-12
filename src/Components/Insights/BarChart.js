@@ -9,7 +9,7 @@ function BarChart(props){
     labels: labels,
     datasets: [
       {
-        label: labels,
+        
         backgroundColor: ["rgb(38, 100, 115)","rgb(35, 145, 255)"],
         data: Object.values(props),
         options:{"responsive":true,"maintainAspectRatio":true,"showScale":false}

@@ -12,7 +12,7 @@ import './Home.css';
 import Loader from '../../Components/Loader/Loader';
 function Home() {
     const { userEmail, setUserEmail } = useContext(EmailContext);           //global state to be set to user after successful login
-    const [Render,setRender] = useState(null);            //User to render metadata of the Id
+    const [Render,setRender] = useState(false);            //User to render metadata of the Id
     const [RawId,setRawId] = useState('');            //password state
     const [Id,setId] = useState({});            //password state
     const [Isloading,setIsloading] = useState(true);            // To render Loading component
