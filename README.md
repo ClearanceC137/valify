@@ -46,6 +46,9 @@ This is what you can do with VALIFY:
 [Application documentation](https://github.com/ClearanceC137/valify/tree/main/src/Documentation)
 
 
+### For URL access to the application please visit
+[VALIFY](https://clearancec137.github.io/valify)
+
 ### To find out more, please visit the 
 [VALIFY github](https://github.com/ClearanceC137/valify)
 
